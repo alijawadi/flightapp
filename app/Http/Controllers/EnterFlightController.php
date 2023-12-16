@@ -8,6 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnterFlightController extends Controller
 {
+    /**
+     * Enter User Flights Data
+     *
+     * @param EnterFlightRequest $request
+     * @return Response
+     */
     public function enter(EnterFlightRequest $request): Response
     {
         $validated = $request->validated();

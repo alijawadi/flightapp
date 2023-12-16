@@ -16,19 +16,28 @@ class EnterFlightRequest extends FormRequest
     public function rules(): array
     {
         return [
+            /**
+             * Passport Number of the user.
+             * @example C12345678
+             */
             "passport_no" => [
                 "required",
                 "string",
                 "max:12"
             ],
+            /**
+             * The flight origin and destination. first element is origin and second is destination.
+             * @example [["SFO","EWR"]]
+             */
             "flights" => [
                 "required",
                 "array"
             ],
+
             "flights.*.*" => [
                 "required",
                 "string",
-                "max:6"
+                "max:3"
             ],
         ];
     }
