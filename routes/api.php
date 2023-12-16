@@ -14,12 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'auth:sanctum'], function () {
-
-    Route::post('/flights/enter', function (Request $request) {
-        return $request->user();
-    });
-
-});
-
 Route::post('/flights/enter', [App\Http\Controllers\EnterFlightController::class, 'enter']);
+Route::get('/user/route}', [App\Http\Controllers\UserRouteController::class, 'get']);
